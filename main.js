@@ -45,20 +45,19 @@ client.on('messageCreate', async (message) => {
 
         try {
 
+            if(convos[message.channel.id]) {
+                var lastMessageId = convos[message.channel.id].lastMessageId
+            } else {
+                var lastMessageId = null
+            }
+            
+
             console.log(message.author.username)
             let msg = `
             Respond Conversationally, the name of the person is bellow, the message is next to it
             ${message.author.username}: ${message.content}
             ChatGPT: 
             `
-
-            // open convos from convos.json
-            fs.readFile('./convos.json', (err, data) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    convos = JSON.parse(data);
-                }});
 
 
             if (convos[message.channel.id]) {
@@ -80,13 +79,8 @@ client.on('messageCreate', async (message) => {
                 console.log(convos)
             }
 
-            // save convos to convos.json
-            
-            fs.writeFile('./convos.json', JSON.stringify(convos), (err) => {
-                if (err) {
-                    console.log(err);
-                }
-            });
+
+            convos = { ...convos, [message.channel.id]: { 'lastMessageId': response.messageId } } 
 
         } catch (err) {
             console.error(err);
