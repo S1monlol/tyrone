@@ -16,6 +16,8 @@ Next, you will need to create a .env file in the root directory of the project w
 DISCORD_TOKEN=[your-discord-token]
 OPENAI_API_KEY=[your-openai-api-key]
 
+Next, run export $(xargs <.env) (you can also just export each var)
+
 
 Finally, you can start the bot by running the following command:
 
