@@ -1,5 +1,4 @@
 import ChatGPTClient from '@waylaidwanderer/chatgpt-api';
-import fs from 'fs';
 const currentDateString = new Date().toISOString().split('T')[0];
 
 let convos = {}
