@@ -1,6 +1,3 @@
-# CURRENTLY BROKEN! 
-Explantation : This used to used a leaked model name to access chatgpt, but that was recently removed. Soon will be updated to use a proxied api of a secret model name
-
 # Tyrone - A Discord Self-Bot Using OpenAI's Chatgpt 
 
 Tyrone is a Discord self-bot that uses the OpenAI GPT-3 API to generate human-like responses to messages in Discord. It is designed to mimic the behavior of a normal internet user, and can participate in conversations in a way that is indistinguishable from a real person.
